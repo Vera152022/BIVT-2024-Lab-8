@@ -9,7 +9,7 @@ namespace Lab_8
     public class Purple_2 : Purple
     {
         private string[] _out;
-        public string[] Out => _out;
+        public string[] Output => _out;
         public Purple_2(string intput) : base(intput) 
         {
             _out = new string[0];
