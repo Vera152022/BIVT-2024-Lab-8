@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +21,10 @@ namespace Lab_8
         public override void Review()
         {
             if (Input == null) return;
-            string word = "";
+            var word = new StringBuilder(); 
             int deff = 45;
             int deff3 = 39;
+            var answer_out = new StringBuilder();
             for (int i = 0; i < Input.Length; i++) 
             {
                 Char def2 = Input[i];
@@ -32,36 +33,38 @@ namespace Lab_8
                 if (Char.IsLetter(Input[i]) || deff == deff2 || deff2 == deff3)
                 { 
                     
-                    word += Input[i];
+                    word.Append(Input[i]);
                         
                 }
                 else
                 {
                     if (Char.IsLetter(Input[i]) == false)
                     {
-                        if(word == "th")
+                        if(word.ToString() == "th")
                         {
-                            _out += "th";
-                            _out += Input[i];
-                            word = "";
+                            answer_out.Append("th");
+                            answer_out.Append(Input[i]);
+                            word = new StringBuilder();
                         }
                         else
                         {
-                            string word_2 = "";
+                            var word_2 = new StringBuilder();
                             for (int j = word.Length - 1; j > -1; j--)
                             {
-                                word_2 += word[j];
+                                word_2.Append(word[j]);
                             }
-                            _out += word_2;
-                            word = "";
-                            _out += Input[i];
+                            answer_out.Append(word_2.ToString());
+                            word = new StringBuilder();
+                            answer_out.Append(Input[i]);
 
                         }
                         
 
                     }
                 }
+                
             }
+            _out = answer_out.ToString();
         }
     }
 }
