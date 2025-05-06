@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -16,6 +16,5 @@ namespace Lab_8
             _input = input;
         }
         public abstract void Review();
-        public abstract string ToString();
     }
 }
