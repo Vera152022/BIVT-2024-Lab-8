@@ -20,7 +20,11 @@ namespace Lab_8
         }
         public override void Review()
         {
-            if (Input == null) return;
+            if (Input == null)
+            {
+                _out = Input;
+                return;
+            } 
             var word = new StringBuilder(); 
             int deff = 45;
             int deff3 = 39;
