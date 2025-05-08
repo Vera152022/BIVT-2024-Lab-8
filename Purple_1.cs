@@ -10,10 +10,8 @@ namespace Lab_8
     {
         private string _out;
         public string Output => _out;
-        public Purple_1(string outt) : base(outt)
-        {
-            _out = "";
-        }
+
+        public Purple_1(string outt) : base(outt) {}
         public override string ToString()
         {
             return _out;
@@ -22,7 +20,7 @@ namespace Lab_8
         {
             if (Input == null)
             {
-                _out = Input;
+                _out = null;
                 return;
             } 
             var word = new StringBuilder(); 
