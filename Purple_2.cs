@@ -9,7 +9,16 @@ namespace Lab_8
     public class Purple_2 : Purple
     {
         private string[] _out;
-        public string[] Output => _out;
+        public string[] Output
+        {
+            get
+            {
+                if (_out == null) return null;
+                var new_out = new string[_out.Length];
+                Array.Copy(_out, new_out, _out.Length);
+                return new_out;
+            }
+        }
         public Purple_2(string intput) : base(intput) 
         {
             _out = new string[0];
@@ -18,7 +27,7 @@ namespace Lab_8
         public override string ToString()
         {
             if (_out == null || _out.Length == 0) return null;
-            string outt = string.Join("\n", _out);
+            string outt = string.Join(Environment.NewLine, _out);
             return outt;
         }
         public override void Review()
