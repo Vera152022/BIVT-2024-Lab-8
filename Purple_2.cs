@@ -19,10 +19,7 @@ namespace Lab_8
                 return new_out;
             }
         }
-        public Purple_2(string intput) : base(intput) 
-        {
-            _out = new string[0];
-        }
+        public Purple_2(string intput) : base(intput) {}
 
         public override string ToString()
         {
@@ -33,6 +30,7 @@ namespace Lab_8
         public override void Review()
         {
             if (Input == null) return;
+            _out = new string[0];
             string[] tot = Input.Split(' ');
             if (tot.Length == 0) return;
             var summ = new StringBuilder();
